@@ -1,7 +1,7 @@
 import { Avatar } from "@mui/material";
 import Button from "@mui/material/Button";
 import Switch from "@mui/material/Switch";
-import Input from "@mui/material/Input";
+import OutlinedInput from "@mui/material/OutlinedInput";
 import InputLabel from '@mui/material/InputLabel';
 import FormControl from "@mui/material/FormControl";
 
@@ -26,13 +26,13 @@ function ProfilePage() {
             <div>
               <FormControl> 
                 <InputLabel size="normal" focused>Name</InputLabel>
-                <Input id="name" defaultValue="John Doe" />
+                <OutlinedInput label="Name" id="name" defaultValue="John Doe" />
               </FormControl> 
             </div>
             <div>
               <FormControl> 
                 <InputLabel size="normal" focused>Email</InputLabel>
-                <Input id="email" type="email" defaultValue="john@example.com" />
+                <OutlinedInput label="Email" id="email" type="email" defaultValue="john@example.com" disabled />
               </FormControl>
             </div>
             <Button variant="outlined" className="w-full">Update</Button>
@@ -44,19 +44,19 @@ function ProfilePage() {
             <div>
               <FormControl>
                 <InputLabel size="normal" focused>Current Password</InputLabel>
-                <Input id="currentPassword" type="password" />
+                <OutlinedInput label="Current Password" id="currentPassword" type="password" />
               </FormControl>
             </div>
             <div>
               <FormControl>
                 <InputLabel size="normal" focused>New Password</InputLabel>
-                <Input id="newPassword" type="password" />
+                <OutlinedInput label="New Password" id="newPassword" type="password" />
               </FormControl>
             </div>
             <div>
               <FormControl>
                 <InputLabel size="normal" focused>Confirm Password</InputLabel>
-                <Input id="confirmPassword" type="password" />
+                <OutlinedInput label="Confirm Password" id="confirmPassword" type="password" />
               </FormControl>
             </div>
             <Button variant="outlined" className="w-full">Update Password</Button>
