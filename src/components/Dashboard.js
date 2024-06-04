@@ -144,4 +144,8 @@ const Menu = styled.div`
     z-index: 10;
     transform: ${props => props.menu ? 'translateX(-100%)' : 'translateX(0%)'};
     transition: transform 0.5s ease-in-out;
+    @media only screen and (min-height: 0px) and (max-height: 534px) {
+        padding-top: 7rem;
+        overflow-y: auto;
+    }
 `
