@@ -1,5 +1,4 @@
 import React from "react";
-import DashboardBox from "./OverviewBox";
 import { useSelector, useDispatch } from "react-redux";
 import { bindActionCreators } from "@reduxjs/toolkit";
 import { actionCreators } from "../app/state";
@@ -8,6 +7,12 @@ import { actionCreators } from "../app/state";
 import { styled } from 'styled-components';
 import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
+
+// Tabs
+import OverviewPage from "../pages/Dashboard/OverviewPage";
+import PropertiesPage from "../pages/PropertiesPage";
+import ReceiptsPage from "../pages/ReceiptsPage";
+import ExpensesPage from "../pages/ExpensesPage";
 
 // MUI Icons
 import DashboardOutlinedIcon from '@mui/icons-material/DashboardOutlined';
@@ -21,36 +26,7 @@ import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
-
-const tenant = [{
-    title: 'Recent Tenant',
-    child: [
-        {
-            title: 'Name',
-            value: 'Tenant Name',
-        },
-        {
-            title: 'Phone',
-            value: 'Tenant Phone',
-        },
-        {
-            title: 'Address',
-            value: 'Tenant Address',
-        },
-        {
-            title: 'Rent due date',
-            value: 'Rent Due Date',
-        },
-        {
-            title: 'Move in date',
-            value: 'Move In Date',
-        },
-        {
-            title: 'Move out date',
-            value: 'Move Out Date',
-        }
-    ]
-}];
+import TenantsPage from "../pages/TenantsPage";
 
 function Dashboard() {
     const dispatch = useDispatch();
@@ -107,37 +83,35 @@ function Dashboard() {
                 className="min-h-screen flex bg-gray-200 xxs:pt-28 md:pt-24 pb-8 ps-4 pe-4"
                 menu={menu}
             >
+                {renderPage(tab)}
                 
-                <DashboardPage 
-                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-                    menu={menu}
-                >
-                    <DashboardBox data={tenant} />
-                    <DashboardBox data={tenant} />
-                    <DashboardBox data={tenant} />
-                    <DashboardBox data={tenant} />
-                    <DashboardBox data={tenant} />
-                    <DashboardBox data={tenant} />
-                </DashboardPage>
             </DashBoard>
         </div>
     );
 }
 
+function renderPage(tab) {
+    switch(tab.menuValue) {
+        case "dashboard":
+            return <OverviewPage />;
+        case "tenants":
+            return <TenantsPage />;
+        case "properties":
+            return <PropertiesPage />;
+        case "receipts":
+            return <ReceiptsPage />;
+        case "expenses":
+            return <ExpensesPage />;
+        default:
+            return <OverviewPage />;
+    }
+}
+
 export default Dashboard;
+
 
 const DashBoard = styled.div`
     justify-content: ${props => props.menu ? 'end' : 'flex-end'};
-`;
-
-const DashboardPage = styled.div`
-    @media (max-width: 1024px) {
-        min-width: 100%;
-    }
-    @media (min-width: 1024px) {
-        min-width: ${props => props.menu ? '100%' : 'calc(100% - 12rem)'};
-        transition: min-width 0.5s ease-in-out;
-    }
 `;
 
 const Menu = styled.div`
@@ -148,4 +122,4 @@ const Menu = styled.div`
         padding-top: 7rem;
         overflow-y: auto;
     }
-`
+`;
