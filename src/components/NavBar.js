@@ -21,7 +21,7 @@ function NavBar() {
   const dispatch = useDispatch();
   const { toggleMenu } = bindActionCreators(actionCreators, dispatch);
   return (
-    <Navbar className=' flex bg-gray-900 text-white py-4 px-6 text-2xl font-bold top-0 left-0 right-0 z-10 items-center justify-between fixed'>
+    <Navbar className=' flex bg-gray-900 text-white py-4 px-6 xs:text-xl md:text-2xl font-bold top-0 left-0 right-0 z-10 items-center justify-between fixed'>
       <ul className="flex gap-5">
           <li>
           <Tooltip title="Menu" arrow>
