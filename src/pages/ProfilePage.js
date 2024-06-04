@@ -7,7 +7,7 @@ import FormControl from "@mui/material/FormControl";
 
 function ProfilePage() {
   return (
-    <div className="container mx-auto xxs:pt-28 md:pt-24 my-12 px-4 md:px-6 lg:px-8">
+    <div className="container xxs:pt-28 md:pt-24 px-4 md:px-6 lg:px-8 bg-gray-200 min-w-full min-h-screen pb-8">
       <h1 className="mb-8 text-3xl font-bold">Profile Settings</h1>
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
         
@@ -63,7 +63,7 @@ function ProfilePage() {
           </div>
         </div>
         <div className="rounded-lg bg-white p-6 shadow">
-          <h2 className="mb-4 text-xl font-bold">Notification Preferences</h2>
+          <h2 className="mb-4 text-xl font-bold">Notification Preferences ( Experimental )</h2>
           <div className="space-y-4">
             <div className="flex items-center justify-between">
               <div>
