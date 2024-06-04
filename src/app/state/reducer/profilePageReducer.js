@@ -1,5 +1,5 @@
 let initialState = {
-    profilePage: "dashboardPage",
+    profilePage: false,
 };
 
 const reducer = (state = initialState, action) => {
@@ -7,7 +7,7 @@ const reducer = (state = initialState, action) => {
         case 'TOGGLE_PROFILE_PAGE':
             return {
                 ...state,
-                profilePage: action.payload
+                profilePage: !state.profilePage
             };
         default:
             return state;

@@ -28,13 +28,10 @@ export const toggleDetailsMenu = (toggleDetailsMenu) => {
     }
 };
 
-export const toggleProfilePage = (profilePage) => {
+export const toggleProfilePage = () => {
     return (dispatch) => {
         dispatch({
-            type: 'TOGGLE_PROFILE_PAGE',
-            payload: {
-                profilePage
-            }
+            type: 'TOGGLE_PROFILE_PAGE'
         });
     }
 };

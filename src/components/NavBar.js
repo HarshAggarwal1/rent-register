@@ -46,7 +46,7 @@ function NavBar() {
             <IconButton 
               aria-label="Profile Settings" 
               style={{ color: "#ffffff" }} 
-              onClick={() => toggleProfilePage("profilePage")} >
+              onClick={() => toggleProfilePage()} >
               <Person2OutlinedIcon />
             </IconButton>
           </Tooltip>

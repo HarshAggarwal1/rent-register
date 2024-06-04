@@ -7,11 +7,10 @@ import ProfilePage from './pages/ProfilePage';
 
 function App() {
   const { profilePage } = useSelector((state) => state.profilePage);
-  console.log(profilePage);
   return (
     <div className=' min-h-screen '>
       <NavBar />
-      {renderPage(profilePage.profilePage)}
+      {renderPage(profilePage)}
     </div>
   );
 }
@@ -19,11 +18,10 @@ function App() {
 export default App;
 
 function renderPage(page) {
-  console.log(page);
   switch(page) {
-      case "dashboardPage":
+      case false:
           return <Dashboard />;
-      case "profilePage":
+      case true:
           return <ProfilePage />;
       default:
           return <Dashboard />;
