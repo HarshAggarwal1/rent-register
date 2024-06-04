@@ -9,7 +9,7 @@ import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
 
 // Tabs
-import OverviewPage from "../pages/Dashboard/OverviewPage";
+import OverviewPage from "../pages/OverviewPage";
 import PropertiesPage from "../pages/PropertiesPage";
 import ReceiptsPage from "../pages/ReceiptsPage";
 import ExpensesPage from "../pages/ExpensesPage";

@@ -15,7 +15,7 @@ import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 
-function OverviewBox(props) {
+function Box(props) {
     return (
         <Card className=" pt-4 pb-4 ps-4 pe-4">
             <CardHeader
@@ -45,4 +45,4 @@ function OverviewBox(props) {
     );
 }
 
-export default OverviewBox;
+export default Box;
