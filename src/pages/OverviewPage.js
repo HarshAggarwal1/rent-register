@@ -40,12 +40,11 @@ function OverviewPage() {
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
             menu={menu}
         >
-            <Box data={tenant} />
-            <Box data={tenant} />
-            <Box data={tenant} />
-            <Box data={tenant} />
-            <Box data={tenant} />
-            <Box data={tenant} />
+            <Box title="Recent Tenant" data={tenant[0].child} />
+            <Box title="Receivables" data={tenant[0].child} />
+            <Box title="Recent Receipt" data={tenant[0].child} />
+            <Box title="Expenses" data={tenant[0].child} />
+            <Box title="Earnings" data={tenant[0].child} />
         </Overview>
     );
 }

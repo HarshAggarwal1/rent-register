@@ -19,16 +19,17 @@ function Box(props) {
     return (
         <Card className=" pt-4 pb-4 ps-4 pe-4">
             <CardHeader
-                title={props.data[0].title}
+                title={props.title}
+                classes=".MuiCardHeader-title"
             />
             <CardContent>
                 <div className="grid grid-cols-2 gap-2">
-                    {props.data[0].child.map((item, index) => (
+                    {props.data.map((item, index) => (
                         <div key={index}>
                             <Typography variant="h6" component="div">
                                 {item.title}
                             </Typography>
-                            <Typography color="text.secondary">
+                            <Typography sx={{ mb: 0.5 }} color="text.secondary">
                                 {item.value}
                             </Typography>
                         </div>
@@ -36,7 +37,7 @@ function Box(props) {
                 </div>
             </CardContent>
             <CardActions>
-                <Stack direction="row" spacing={2}>
+                <Stack sx={{ mt: 0.5 }} direction="row" spacing={2}>
                     <Button size="small" variant="outlined">Details</Button>
                     <Button size="small" variant="outlined">Modify</Button>
                 </Stack>
