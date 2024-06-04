@@ -79,10 +79,7 @@ function Dashboard() {
                     </Button>
                 </Stack>
             </Menu>
-            <DashBoard 
-                className="min-h-screen flex bg-gray-200 xxs:pt-28 md:pt-24 pb-8 ps-4 pe-4"
-                menu={menu}
-            >
+            <DashBoard className="min-h-screen flex bg-gray-200 xxs:pt-28 md:pt-24 pb-8 ps-4 pe-4 justify-end">
                 {renderPage(tab)}
                 
             </DashBoard>
@@ -111,7 +108,6 @@ export default Dashboard;
 
 
 const DashBoard = styled.div`
-    justify-content: ${props => props.menu ? 'end' : 'flex-end'};
 `;
 
 const Menu = styled.div`

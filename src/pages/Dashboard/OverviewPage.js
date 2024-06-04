@@ -1,5 +1,5 @@
 import React from "react";
-import OverviewBox from "./OverviewBox";
+import OverviewBox from "../../components/Box";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
 
