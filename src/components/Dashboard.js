@@ -55,7 +55,6 @@ function Dashboard() {
     const { menu } = useSelector((state) => state.menu);
     const { detailsMenu } = useSelector((state) => state.detailsMenu);
     const handleClose = () => toggleDetailsMenu(false);
-    console.log(detailsMenu);
     return (
         <div className="min-h-screen">
             <Menu 
