@@ -1,6 +1,8 @@
 import React from "react";
 import DashboardBox from "./DashboardBox";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { bindActionCreators } from "@reduxjs/toolkit";
+import { actionCreators } from "../app/state";
 
 // MUI Components
 import { styled } from 'styled-components';
@@ -51,29 +53,58 @@ const tenant = [{
 }];
 
 function Dashboard() {
+    const dispatch = useDispatch();
+    const { changeMenu } = bindActionCreators(actionCreators, dispatch);
+    const { tab } = useSelector((state) => state.tab);
     const { menu } = useSelector((state) => state.menu);
+    console.log(tab);
     return (
-        <div>
+        <div className="min-h-screen">
             <Menu 
-                className=" fixed bg-gray-200 left-0 top-0 min-h-screen ps-8 pe-8 xxxs:w-screen xxs:w-screen xs:w-screen sm:w-screen md:w-screen lg:w-48 xl:w-48 2xl:w-48"
+                className=" fixed bg-gray-200 left-0 top-0 max-h-screen ps-8 pe-8 xxxs:w-screen xxs:w-screen xs:w-screen sm:w-screen md:w-screen lg:w-48 xl:w-48 2xl:w-48"
                 menu={menu}
             >
                 <Stack 
                 minHeight={"100vh"}
                 direction="column" 
                 spacing={4}
-                alignItems="flex-start"
+                alignItems="center"
                 justifyContent="center"
                 > 
-                    <Button startIcon={<DashboardOutlinedIcon />}>Dashboard</Button>
-                    <Button startIcon={<Person3OutlinedIcon />}>Tenants</Button>
-                    <Button startIcon={<MapsHomeWorkOutlinedIcon />}>Properties</Button>
-                    <Button startIcon={<ReceiptLongOutlinedIcon />}>Receipts</Button>
-                    <Button startIcon={<CurrencyRupeeOutlinedIcon />}>Expenses</Button>
+                    <Button 
+                        startIcon={<DashboardOutlinedIcon />}
+                        onClick={() => changeMenu("dashboard")}
+                    >
+                        Dashboard
+                    </Button>
+                    <Button 
+                        startIcon={<Person3OutlinedIcon />}
+                        onClick={() => changeMenu("tenants")}
+                    >
+                        Tenants
+                    </Button>
+                    <Button 
+                        startIcon={<MapsHomeWorkOutlinedIcon />}
+                        onClick={() => changeMenu("properties")}
+                    >
+                        Properties
+                    </Button>
+                    <Button 
+                        startIcon={<ReceiptLongOutlinedIcon />}
+                        onClick={() => changeMenu("receipts")}
+                    >
+                        Receipts
+                    </Button>
+                    <Button 
+                        startIcon={<CurrencyRupeeOutlinedIcon />}
+                        onClick={() => changeMenu("expenses")}
+                    >
+                        Expenses
+                    </Button>
                 </Stack>
             </Menu>
             <DashBoard 
-                className="min-h-screen flex bg-gray-200 pt-24 pb-8 ps-4 pe-4"
+                className="min-h-screen flex bg-gray-200 xxs:pt-28 md:pt-24 pb-8 ps-4 pe-4"
                 menu={menu}
             >
                 

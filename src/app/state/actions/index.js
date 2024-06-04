@@ -5,3 +5,14 @@ export const toggleMenu = () => {
         });
     }
 };
+
+export const changeMenu = (menuValue) => {
+    return (dispatch) => {
+        dispatch({
+            type: 'CHANGE_MENU',
+            payload: {
+                menuValue
+            }
+        });
+    }
+}
