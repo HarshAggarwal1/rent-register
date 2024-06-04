@@ -145,7 +145,7 @@ function ExpensesPage() {
         <Expenses className=" flex flex-col items-end gap-4" menu={menu}>
         <Button className="" startIcon={<AddIcon />} variant="outlined">New Expense</Button>
             <Paper sx={{ width: '100%', overflow: 'hidden' }}>
-                <TableContainer sx={{ maxHeight: 440 }}>
+                <TableContainer sx={{ maxHeight: 360 }}>
                     <Table sx={{ minWidth: 800 }} aria-label="Receipts Table" stickyHeader>
                         <TableHead>
                         <TableRow>
