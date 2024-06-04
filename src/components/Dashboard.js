@@ -52,11 +52,11 @@ const tenant = [{
 
 function Dashboard() {
     const { menu } = useSelector((state) => state.menu);
-    console.log(menu);
     return (
-        <DashBoard className="min-h-screen flex-col bg-gray-200 pt-24 pb-8 ps-4 pe-4 gap-5">
+        <div>
             <Menu 
-                className=" fixed bg-gray-200 left-0 top-0 min-h-screen ps-8 pe-8 sm:w-screen md:w-screen lg:w-48 xl:w-48 2xl:w-48"
+                className=" fixed bg-gray-200 left-0 top-0 min-h-screen ps-8 pe-8 xxxs:w-screen xxs:w-screen xs:w-screen sm:w-screen md:w-screen lg:w-48 xl:w-48 2xl:w-48"
+                menu={menu}
             >
                 <Stack 
                 minHeight={"100vh"}
@@ -72,25 +72,45 @@ function Dashboard() {
                     <Button startIcon={<CurrencyRupeeOutlinedIcon />}>Expenses</Button>
                 </Stack>
             </Menu>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <DashboardBox data={tenant} />
-                <DashboardBox data={tenant} />
-                <DashboardBox data={tenant} />
-                <DashboardBox data={tenant} />
-                <DashboardBox data={tenant} />
-                <DashboardBox data={tenant} />
-            </div>
-        </DashBoard>
+            <DashBoard 
+                className="min-h-screen flex bg-gray-200 pt-24 pb-8 ps-4 pe-4"
+                menu={menu}
+            >
+                
+                <DashboardPage 
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+                    menu={menu}
+                >
+                    <DashboardBox data={tenant} />
+                    <DashboardBox data={tenant} />
+                    <DashboardBox data={tenant} />
+                    <DashboardBox data={tenant} />
+                    <DashboardBox data={tenant} />
+                    <DashboardBox data={tenant} />
+                </DashboardPage>
+            </DashBoard>
+        </div>
     );
 }
 
 export default Dashboard;
 
 const DashBoard = styled.div`
-    max-width: 100vw;
+    justify-content: ${props => props.menu ? 'end' : 'flex-end'};
+`;
+
+const DashboardPage = styled.div`
+    @media (max-width: 1024px) {
+        min-width: 100%;
+    }
+    @media (min-width: 1024px) {
+        min-width: ${props => props.menu ? '100%' : 'calc(100% - 12rem)'};
+        transition: min-width 0.5s ease-in-out;
+    }
 `;
 
 const Menu = styled.div`
     z-index: 10;
-
+    transform: ${props => props.menu ? 'translateX(-100%)' : 'translateX(0%)'};
+    transition: transform 0.5s ease-in-out;
 `

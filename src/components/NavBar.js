@@ -64,7 +64,6 @@ export default NavBar;
 
 const Navbar = styled.nav`
   display: flex;
-  border-radius: 0 0 3px 10px;
   shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   z-index: 20;
 `
