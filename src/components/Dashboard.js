@@ -1,5 +1,6 @@
 import React from "react";
 import DashboardBox from "./DashboardBox";
+import { useSelector } from "react-redux";
 
 // MUI Components
 import { styled } from 'styled-components';
@@ -50,6 +51,8 @@ const tenant = [{
 }];
 
 function Dashboard() {
+    const { menu } = useSelector((state) => state.menu);
+    console.log(menu);
     return (
         <DashBoard className="min-h-screen flex-col bg-gray-200 pt-24 pb-8 ps-4 pe-4 gap-5">
             <Menu 

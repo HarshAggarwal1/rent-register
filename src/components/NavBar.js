@@ -1,9 +1,12 @@
 import React from "react";
+import { styled } from 'styled-components';
+import { useDispatch } from "react-redux";
+import { bindActionCreators } from "@reduxjs/toolkit";
+import { actionCreators } from "../app/state";
 
 // MUI Components
-import { styled } from 'styled-components';
-import IconButton from '@mui/material/IconButton';
 import Logout from '@mui/icons-material/Logout';
+import IconButton from '@mui/material/IconButton';
 import Person2OutlinedIcon from '@mui/icons-material/Person2Outlined';
 import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
 import { Tooltip } from "@mui/material";
@@ -15,12 +18,17 @@ import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 
 function NavBar() {
+  const dispatch = useDispatch();
+  const { toggleMenu } = bindActionCreators(actionCreators, dispatch);
   return (
     <Navbar className=' flex bg-gray-900 text-white py-4 px-6 text-2xl font-bold top-0 left-0 right-0 z-10 items-center justify-between fixed'>
       <ul className="flex gap-5">
           <li>
           <Tooltip title="Menu" arrow>
-            <IconButton aria-label="Menu" style={{ color: "#ffffff" }} className=" ">
+            <IconButton 
+              aria-label="Menu" 
+              style={{ color: "#ffffff" }}
+              onClick={() => toggleMenu()} >
               <MenuOutlinedIcon />
             </IconButton>
           </Tooltip>
