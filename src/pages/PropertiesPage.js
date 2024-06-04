@@ -276,7 +276,7 @@ function EnhancedTableToolbar(props) {
             {numSelected > 0 ? (
                 <Tooltip title="Delete">
                     <IconButton>
-                        <DeleteIcon onClick={() => {alert("Clicked from receipts page");}}/>
+                        <DeleteIcon onClick={() => {alert("Clicked from properties page");}}/>
                     </IconButton>
                 </Tooltip>
             ) : (
