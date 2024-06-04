@@ -1,15 +1,51 @@
 import React from "react";
 import styled from "styled-components";
 import { useSelector } from "react-redux";
+import Box from "../components/Box";
+
+const tenant = [{
+    title: 'Tenant Name',
+    child: [
+        {
+            title: 'Name',
+            value: 'Tenant Name',
+        },
+        {
+            title: 'Phone',
+            value: 'Tenant Phone',
+        },
+        {
+            title: 'Address',
+            value: 'Tenant Address',
+        },
+        {
+            title: 'Rent due date',
+            value: 'Rent Due Date',
+        },
+        {
+            title: 'Move in date',
+            value: 'Move In Date',
+        },
+        {
+            title: 'Move out date',
+            value: 'Move Out Date',
+        }
+    ]
+}];
 
 function TenantsPage() {
     const { menu } = useSelector((state) => state.menu);
     return (
         <Tenants 
-            className=" flex justify-center"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
             menu={menu}
         >
-            Tenants Page
+            <Box data={tenant} />
+            <Box data={tenant} />
+            <Box data={tenant} />
+            <Box data={tenant} />
+            <Box data={tenant} />
+            <Box data={tenant} />
         </Tenants>
     );
 }

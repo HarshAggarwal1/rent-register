@@ -1,5 +1,5 @@
 import React from "react";
-import OverviewBox from "../components/Box";
+import Box from "../components/Box";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
 
@@ -40,12 +40,12 @@ function OverviewPage() {
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
             menu={menu}
         >
-            <OverviewBox data={tenant} />
-            <OverviewBox data={tenant} />
-            <OverviewBox data={tenant} />
-            <OverviewBox data={tenant} />
-            <OverviewBox data={tenant} />
-            <OverviewBox data={tenant} />
+            <Box data={tenant} />
+            <Box data={tenant} />
+            <Box data={tenant} />
+            <Box data={tenant} />
+            <Box data={tenant} />
+            <Box data={tenant} />
         </Overview>
     );
 }
