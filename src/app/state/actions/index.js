@@ -16,3 +16,14 @@ export const changeMenu = (menuValue) => {
         });
     }
 }
+
+export const toggleDetailsMenu = (toggleDetailsMenu) => {
+    return (dispatch) => {
+        dispatch({
+            type: 'TOGGLE_DETAILS_MENU',
+            payload: {
+                toggleDetailsMenu
+            }
+        });
+    }
+};
