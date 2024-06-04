@@ -145,7 +145,7 @@ function ReceiptsPage() {
         <Receipts className=" flex flex-col items-end gap-4" menu={menu}>
             <Button className="" startIcon={<AddIcon />} variant="outlined">Add Receipt</Button>
             <Paper sx={{ width: '100%', overflow: 'hidden' }}>
-                <TableContainer sx={{ maxHeight: 560 }}>
+                <TableContainer sx={{ maxHeight: 440 }}>
                     <Table sx={{ minWidth: 800 }} aria-label="Receipts Table" stickyHeader>
                         <TableHead>
                         <TableRow>
