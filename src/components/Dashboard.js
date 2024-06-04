@@ -12,42 +12,44 @@ import '@fontsource/roboto/700.css';
 
 const tenant = [{
     title: 'Recent Tenant',
-    field1: {
-        title: 'Name',
-        value: 'Tenant Name',
-    },
-    field2: {
-        title: 'Phone',
-        value: 'Tenant Phone',
-    },
-    field3: {
-        title: 'Address',
-        value: 'Tenant Address',
-    },
-    field4: {
-        title: 'Rent due date',
-        value: 'Rent Due Date',
-    },
-    field5: {
-        title: 'Move in date',
-        value: 'Move In Date',
-    },
-    field6: {
-        title: 'Move out date',
-        value: 'Move Out Date',
-    }
+    child: [
+        {
+            title: 'Name',
+            value: 'Tenant Name',
+        },
+        {
+            title: 'Phone',
+            value: 'Tenant Phone',
+        },
+        {
+            title: 'Address',
+            value: 'Tenant Address',
+        },
+        {
+            title: 'Rent due date',
+            value: 'Rent Due Date',
+        },
+        {
+            title: 'Move in date',
+            value: 'Move In Date',
+        },
+        {
+            title: 'Move out date',
+            value: 'Move Out Date',
+        }
+    ]
 }];
 
 function Dashboard() {
     return (
-        <DashBoard className="min-h-screen flex-col bg-gray-200 pt-24 pb-8 ps-6 pe-6 gap-5">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
-                <DashboardBox title={tenant} />
-                <DashboardBox title={tenant} />
-                <DashboardBox title={tenant} />
-                <DashboardBox title={tenant} />
-                <DashboardBox title={tenant} />
-                <DashboardBox title={tenant} />
+        <DashBoard className="min-h-screen flex-col bg-gray-200 pt-24 pb-8 ps-4 pe-4 gap-5">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <DashboardBox data={tenant} />
+                <DashboardBox data={tenant} />
+                <DashboardBox data={tenant} />
+                <DashboardBox data={tenant} />
+                <DashboardBox data={tenant} />
+                <DashboardBox data={tenant} />
             </div>
         </DashBoard>
     );
@@ -56,5 +58,5 @@ function Dashboard() {
 export default Dashboard;
 
 const DashBoard = styled.div`
-    min-width: 100vw;
+    max-width: 100vw;
 `;
