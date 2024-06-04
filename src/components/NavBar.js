@@ -16,7 +16,7 @@ import '@fontsource/roboto/700.css';
 
 function NavBar() {
   return (
-    <Navbar className=' flex bg-gray-900 text-white py-4 px-6 text-2xl font-bold top-0 left-0 right-0 z-10 items-center justify-between'>
+    <Navbar className=' flex bg-gray-900 text-white py-4 px-6 text-2xl font-bold top-0 left-0 right-0 z-10 items-center justify-between fixed'>
       <ul className="flex gap-5">
           <li>
           <Tooltip title="Menu" arrow>
