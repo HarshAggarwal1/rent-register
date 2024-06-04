@@ -1,5 +1,5 @@
 import React from "react";
-import DashboardBox from "./DashboardBox";
+import DashboardBox from "./OverviewBox";
 import { useSelector, useDispatch } from "react-redux";
 import { bindActionCreators } from "@reduxjs/toolkit";
 import { actionCreators } from "../app/state";
