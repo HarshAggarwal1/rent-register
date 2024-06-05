@@ -358,14 +358,14 @@ function PropertiesPage() {
     // Modal state
     const dispatch = useDispatch();
     const { toggleModal } = bindActionCreators(actionCreators, dispatch);
-
+    const { tab } = useSelector((state) => state.tab);
     return (
         <Properties className=" flex flex-col items-end gap-4" menu={menu}>
             <Button 
                 className="" 
                 startIcon={<AddIcon />} 
                 variant="outlined"
-                onClick={() => toggleModal(true)}
+                onClick={() => toggleModal(true, tab.menuValue, "add_property")}
             >
                 Add Property
             </Button>

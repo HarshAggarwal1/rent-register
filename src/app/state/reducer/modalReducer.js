@@ -1,5 +1,8 @@
+
 let initialState = {
-    modal: false
+    modal: false,
+    tab: "",
+    page: ""
 };
 
 const reducer = (state = initialState, action) => {
@@ -7,7 +10,9 @@ const reducer = (state = initialState, action) => {
         case 'TOGGLE_MODAL':
             return {
                 ...state,
-                modal: action.payload
+                modal: action.payload,
+                tab: action.payload,
+                page: action.payload
             };
         default:
             return state;

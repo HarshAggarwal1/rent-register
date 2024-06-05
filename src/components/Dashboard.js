@@ -17,7 +17,7 @@ import TenantsPage from "../pages/TenantsPage";
 import ModalPage from "./ModalPage";
 
 // MUI Icons
-import DashboardOutlinedIcon from '@mui/icons-material/DashboardOutlined';
+// import DashboardOutlinedIcon from '@mui/icons-material/DashboardOutlined';
 import Person3OutlinedIcon from '@mui/icons-material/Person3Outlined';
 import MapsHomeWorkOutlinedIcon from '@mui/icons-material/MapsHomeWorkOutlined';
 import ReceiptLongOutlinedIcon from '@mui/icons-material/ReceiptLongOutlined';

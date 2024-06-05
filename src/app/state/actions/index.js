@@ -17,12 +17,14 @@ export const changeMenu = (menuValue) => {
     }
 }
 
-export const toggleModal = (modal) => {
+export const toggleModal = (modal=false, tab="tenants", page="") => {
     return (dispatch) => {
         dispatch({
             type: 'TOGGLE_MODAL',
             payload: {
-                modal
+                modal,
+                tab,
+                page
             }
         });
     }

@@ -43,6 +43,7 @@ const tenant = [{
 
 function TenantsPage() {
     const { menu } = useSelector((state) => state.menu);
+    const { tab } = useSelector((state) => state.tab);
     const dispatch = useDispatch();
     const { toggleModal } = bindActionCreators(actionCreators, dispatch);
     return (
@@ -54,7 +55,7 @@ function TenantsPage() {
                 className="" 
                 startIcon={<AddIcon />} 
                 variant="outlined"
-                onClick={() => toggleModal(true)}
+                onClick={() => toggleModal(true, tab.menuValue, "add_tenant")}
             >
                 Add New Tenant
             </Button>
