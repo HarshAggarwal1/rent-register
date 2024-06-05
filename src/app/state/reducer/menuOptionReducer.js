@@ -1,5 +1,5 @@
 let initialState = {
-    tab: "dashboard"
+    tab: "tenants"
 }
 
 const reducer = (state = initialState, action) => {

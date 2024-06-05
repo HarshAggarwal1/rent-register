@@ -14,7 +14,7 @@ import Fade from '@mui/material/Fade';
 import Typography from '@mui/material/Typography';
 
 // Tabs
-import OverviewPage from "../pages/OverviewPage";
+// import OverviewPage from "../pages/OverviewPage";
 import PropertiesPage from "../pages/PropertiesPage";
 import ReceiptsPage from "../pages/ReceiptsPage";
 import ExpensesPage from "../pages/ExpensesPage";
@@ -68,12 +68,12 @@ function Dashboard() {
                 alignItems="center"
                 justifyContent="center"
                 > 
-                    <Button 
+                    {/* <Button 
                         startIcon={<DashboardOutlinedIcon />}
                         onClick={() => changeMenu("dashboard")}
                     >
                         Dashboard
-                    </Button>
+                    </Button> */}
                     <Button 
                         startIcon={<Person3OutlinedIcon />}
                         onClick={() => changeMenu("tenants")}
@@ -136,8 +136,8 @@ function Dashboard() {
 
 function renderPage(tab) {
     switch(tab.menuValue) {
-        case "dashboard":
-            return <OverviewPage />;
+        // case "dashboard":
+        //     return <OverviewPage />;
         case "tenants":
             return <TenantsPage />;
         case "properties":
@@ -147,7 +147,7 @@ function renderPage(tab) {
         case "expenses":
             return <ExpensesPage />;
         default:
-            return <OverviewPage />;
+            return <TenantsPage />;
     }
 }
 
