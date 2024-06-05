@@ -3,6 +3,12 @@ import styled from "styled-components";
 import { useSelector } from "react-redux";
 import Box from "../components/Box";
 
+// MUI Components
+import Button from "@mui/material/Button";
+
+// MUI Icons
+import AddIcon from '@mui/icons-material/Add';
+
 const tenant = [{
     title: 'Tenant Name',
     child: [
@@ -36,23 +42,29 @@ const tenant = [{
 function TenantsPage() {
     const { menu } = useSelector((state) => state.menu);
     return (
-        <Tenants 
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        <TenantPage
+            className=" flex flex-col items-end gap-4" 
             menu={menu}
         >
-            <Box title="Tenant" data={tenant[0].child} />
-            <Box title="Tenant" data={tenant[0].child} />
-            <Box title="Tenant" data={tenant[0].child} />
-            <Box title="Tenant" data={tenant[0].child} />
-            <Box title="Tenant" data={tenant[0].child} />
-            <Box title="Tenant" data={tenant[0].child} />
-        </Tenants>
+            <Button className="" startIcon={<AddIcon />} variant="outlined">Add New Tenant</Button>
+            <Tenants 
+                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full"
+                menu={menu}
+            >
+                <Box title="Tenant" data={tenant[0].child} />
+                <Box title="Tenant" data={tenant[0].child} />
+                <Box title="Tenant" data={tenant[0].child} />
+                <Box title="Tenant" data={tenant[0].child} />
+                <Box title="Tenant" data={tenant[0].child} />
+                <Box title="Tenant" data={tenant[0].child} />
+            </Tenants>
+        </TenantPage>
     );
 }
 
 export default TenantsPage;
 
-const Tenants = styled.div`
+const TenantPage = styled.div`
     @media (max-width: 1024px) {
         min-width: 100%;
     }
@@ -60,4 +72,14 @@ const Tenants = styled.div`
         min-width: ${props => props.menu ? '100%' : 'calc(100% - 12rem)'};
         transition: min-width 0.5s ease-in-out;
     }
+`;
+
+const Tenants = styled.div`
+    // @media (max-width: 1024px) {
+    //     min-width: 100%;
+    // }
+    // @media (min-width: 1024px) {
+    //     min-width: ${props => props.menu ? '100%' : 'calc(100% - 12rem)'};
+    //     transition: min-width 0.5s ease-in-out;
+    // }
 `;

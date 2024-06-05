@@ -355,6 +355,7 @@ function PropertiesPage() {
 
     return (
         <Properties className=" flex flex-col items-end gap-4" menu={menu}>
+            <Button className="" startIcon={<AddIcon />} variant="outlined">Add Property</Button>
             <Paper sx={{ width: '100%', overflow: 'hidden' }}>
                 <EnhancedTableToolbar numSelected={selected.length} />
                 <TableContainer sx={{ maxHeight: 440 }}>
