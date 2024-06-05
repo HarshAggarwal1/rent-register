@@ -63,7 +63,7 @@ function AddProperties() {
                             label="Enter Address"
                             inputProps={{
                                 ...params.inputProps,
-                                autoComplete: 'new-password', // disable autocomplete and autofill
+                                autoComplete: 'off', // disable autocomplete and autofill
                             }}
                             />
                         )}
@@ -87,7 +87,7 @@ function AddProperties() {
                                 label="Floor"
                                 inputProps={{
                                     ...params.inputProps,
-                                    autoComplete: 'new-password', // disable autocomplete and autofill
+                                    autoComplete: 'off', // disable autocomplete and autofill
                                 }}
                                 />
                             )}
@@ -110,7 +110,7 @@ function AddProperties() {
                                 label="Property Type"
                                 inputProps={{
                                     ...params.inputProps,
-                                    autoComplete: 'new-password', // disable autocomplete and autofill
+                                    autoComplete: 'off', // disable autocomplete and autofill
                                 }}
                                 />
                             )}
@@ -135,7 +135,7 @@ function AddProperties() {
                                 label="City"
                                 inputProps={{
                                     ...params.inputProps,
-                                    autoComplete: 'new-password', // disable autocomplete and autofill
+                                    autoComplete: 'off', // disable autocomplete and autofill
                                 }}
                                 />
                             )}
@@ -158,7 +158,7 @@ function AddProperties() {
                                 label="State"
                                 inputProps={{
                                     ...params.inputProps,
-                                    autoComplete: 'new-password', // disable autocomplete and autofill
+                                    autoComplete: 'off', // disable autocomplete and autofill
                                 }}
                                 />
                             )}
