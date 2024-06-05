@@ -1,10 +1,127 @@
 import React from "react";
 import styled from "styled-components";
+import { useDispatch } from "react-redux";
+import { bindActionCreators } from "@reduxjs/toolkit";
+import { actionCreators } from "../app/state";
+
+// MUI Components
+import Card from '@mui/material/Card';
+import CardContent from "@mui/material/CardContent";
+import InputLabel from '@mui/material/InputLabel';
+import OutlinedInput from "@mui/material/OutlinedInput";
+import FormControl from "@mui/material/FormControl";
+import MenuItem from '@mui/material/MenuItem';
+import Select from '@mui/material/Select';
+import Input from '@mui/material/Input';
+import CardActions from '@mui/material/CardActions';
+import Button from '@mui/material/Button';
+
+// MUI Icons
+import AddIcon from '@mui/icons-material/Add';
+import CloseIcon from '@mui/icons-material/Close';
+
+// MUI Styles
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
 
 function AddReceipts() {
+    // Property Select
+    const [tenantName, setTenantName] = React.useState('');
+    const handleTenantName = (event) => {
+        setTenantName(event.target.value);
+    };
+
+    // Mode of Payment Select
+    const [modeOfPayment, setModeOfPayment] = React.useState('');
+    const handleModeOfPaymentChange = (event) => {
+        setModeOfPayment(event.target.value);
+    };
+
+    // modal
+    const dispatch = useDispatch();
+    const { toggleModal } = bindActionCreators(actionCreators, dispatch);
     return (
         <AddReceipt>
-            <h1>Add Receipt</h1>
+            <Card className="w-full" sx={{ borderStartStartRadius: '0.5rem', borderStartEndRadius: '0.5rem' }}>
+                <div className="flex items-center justify-between border-b px-6 py-4 rounded-s-lg">
+                    <h2 className="text-xl font-bold">Add Receipt</h2>
+                </div>
+            </Card>
+            <CardContent className="space-y-4 px-6 py-8">
+                <div>
+                    <FormControl sx={{ width: '100%'}}>
+                        <InputLabel size="normal" focused>Tenant Name</InputLabel>
+                        <Select
+                            labelId="tenant-name"
+                            id="tenant-name"
+                            value={tenantName}
+                            label="Tenant Name"
+                            onChange={handleTenantName}
+                        >
+                            <MenuItem value='Tenant1'>Tenant1</MenuItem>
+                            <MenuItem value='Tenant2'>Tenant2</MenuItem>
+                            <MenuItem value='Tenant3'>Tenant3</MenuItem>
+                        </Select>
+                    </FormControl>
+                </div>
+                <div className="grid gap-2 md:grid-cols-2 md:gap-4">
+                    <div className="grid gap-2">
+                        <FormControl>
+                            <InputLabel size="normal" focused>Amount</InputLabel>
+                            <OutlinedInput
+                                id="amount"
+                                type="number"
+                                label="Amount"
+                                inputProps={{ min: 0 }}
+                            />
+                        </FormControl>
+                    </div>
+                    <div className="grid gap-2">
+                        <InputLabel size="normal" focused>Date</InputLabel>
+                        <Input
+                            id="date"
+                            type="date"
+                        />          
+                    </div>
+                </div>
+                <div>
+                    <FormControl sx={{ width: '100%'}}>
+                        <InputLabel size="normal" focused>Mode of Payment</InputLabel>
+                        <Select
+                            labelId="mode-of-payment"
+                            id="mode-of-payment"
+                            value={modeOfPayment}
+                            label="Mode of Payment"
+                            onChange={handleModeOfPaymentChange}
+                        >
+                        <MenuItem value='Cash'>Cash</MenuItem>
+                        <MenuItem value='Card'>Card</MenuItem>
+                        <MenuItem value='Online'>Online</MenuItem>
+                        <MenuItem value='Cheque'>Cheque</MenuItem>
+                        <MenuItem value='Bank Transfer'>Bank Transfer</MenuItem>
+                        <MenuItem value='Other'>PhonePe</MenuItem>
+                        <MenuItem value='Other'>PayTM</MenuItem>
+                        </Select>
+                    </FormControl>
+                </div>
+                <div>
+                    <FormControl sx={{ width: '100%'}}>
+                        <InputLabel size="normal" focused>Description</InputLabel>
+                        <OutlinedInput
+                            id="description"
+                            multiline
+                            rows={4}
+                            label="Description"
+                        />
+                    </FormControl>
+                </div>
+            </CardContent>
+            <CardActions className="flex justify-end px-6 py-4">
+                <Button startIcon={<AddIcon />} color="primary" variant="contained">Add</Button>
+                <Button startIcon={<CloseIcon />} color="error" variant="contained" onClick={() => toggleModal(false)}>Close</Button>
+            </CardActions>
         </AddReceipt>
     )
 }
