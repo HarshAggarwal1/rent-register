@@ -8,7 +8,6 @@ import Backdrop from '@mui/material/Backdrop';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import Fade from '@mui/material/Fade';
-import Typography from '@mui/material/Typography';
 
 // MUI Styles
 import '@fontsource/roboto/300.css';
@@ -28,10 +27,10 @@ const style = {
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    width: '90%',
-    height: '90%',
+    maxWidth: '90%',
+    maxHeight: '90%',
     bgcolor: 'background.paper',
-    borderRadius: '10px',
+    borderRadius: '0.5rem',
     boxShadow: 24
 };
 
@@ -39,7 +38,11 @@ function ModalPage() {
     const dispatch = useDispatch();
     const { toggleModal } = bindActionCreators(actionCreators, dispatch);
     const { modal } = useSelector((state) => state.modal);
-    const handleClose = () => toggleModal(false);
+    const handleClose = (event, reason) => {
+        if (reason !== 'backdropClick') {
+            toggleModal(false);
+        }
+    }
     return (
         <Modal
             aria-labelledby="transition-modal-title"
@@ -54,7 +57,7 @@ function ModalPage() {
             },
             }}
             keepMounted
-            disableEnforceFocus
+            disableEscapeKeyDown
         >
             <Fade in={modal.modal}>
             <Box sx={style}>
