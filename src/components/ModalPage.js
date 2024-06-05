@@ -31,7 +31,8 @@ const style = {
     maxHeight: '90%',
     bgcolor: 'background.paper',
     borderRadius: '0.5rem',
-    boxShadow: 24
+    boxShadow: 24,
+    overflow: 'auto'
 };
 
 function ModalPage() {
