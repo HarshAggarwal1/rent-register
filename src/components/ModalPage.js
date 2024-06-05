@@ -18,7 +18,7 @@ import '@fontsource/roboto/700.css';
 
 // Modal Pages
 import AddProperty from '../modal-pages/AddProperty';
-import TenantDetails from "../modal-pages/TenantsPage/TenantDetails";
+import TenantDetails from "../modal-pages/TenantsPage/Details/TenantDetails";
 import AddExpense from "../modal-pages/AddExpense";
 import AddReceipt from "../modal-pages/AddReceipt";
 import AddTenant from "../modal-pages/TenantsPage/AddTenant";
