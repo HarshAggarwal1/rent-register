@@ -24,13 +24,13 @@ function ProfilePage() {
           </div>
           <div className="mt-6 space-y-4">
             <div>
-              <FormControl> 
+              <FormControl sx={{ width: '100%' }}> 
                 <InputLabel size="normal" focused>Name</InputLabel>
                 <OutlinedInput label="Name" id="name" defaultValue="John Doe" />
               </FormControl> 
             </div>
             <div>
-              <FormControl> 
+              <FormControl sx={{ width: '100%' }}> 
                 <InputLabel size="normal" focused>Email</InputLabel>
                 <OutlinedInput label="Email" id="email" type="email" defaultValue="john@example.com" disabled />
               </FormControl>
@@ -42,19 +42,19 @@ function ProfilePage() {
           <h2 className="mb-4 text-xl font-bold">Change Password</h2>
           <div className="space-y-4">
             <div>
-              <FormControl>
+              <FormControl sx={{ width: '100%' }}>
                 <InputLabel size="normal" focused>Current Password</InputLabel>
                 <OutlinedInput label="Current Password" id="currentPassword" type="password" />
               </FormControl>
             </div>
             <div>
-              <FormControl>
+              <FormControl sx={{ width: '100%' }}>
                 <InputLabel size="normal" focused>New Password</InputLabel>
                 <OutlinedInput label="New Password" id="newPassword" type="password" />
               </FormControl>
             </div>
             <div>
-              <FormControl>
+              <FormControl sx={{ width: '100%' }}>
                 <InputLabel size="normal" focused>Confirm Password</InputLabel>
                 <OutlinedInput label="Confirm Password" id="confirmPassword" type="password" />
               </FormControl>
