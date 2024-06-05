@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { useDispatch } from "react-redux";
 import { bindActionCreators } from "@reduxjs/toolkit";
-import { actionCreators } from "../app/state";
+import { actionCreators } from "../../app/state";
 
 // MUI Components
 import Card from '@mui/material/Card';
@@ -26,11 +26,11 @@ import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 
-function AddExpenses() {
+function AddReceipts() {
     // Property Select
-    const [property, setProperty] = React.useState('');
-    const handlePropertyChange = (event) => {
-        setProperty(event.target.value);
+    const [tenantName, setTenantName] = React.useState('');
+    const handleTenantName = (event) => {
+        setTenantName(event.target.value);
     };
 
     // Mode of Payment Select
@@ -43,26 +43,26 @@ function AddExpenses() {
     const dispatch = useDispatch();
     const { toggleModal } = bindActionCreators(actionCreators, dispatch);
     return (
-        <AddExpense>
+        <AddReceipt>
             <Card className="w-full" sx={{ borderStartStartRadius: '0.5rem', borderStartEndRadius: '0.5rem' }}>
                 <div className="flex items-center justify-between border-b px-6 py-4 rounded-s-lg">
-                    <h2 className="text-xl font-bold">Add Expense</h2>
+                    <h2 className="text-xl font-bold">Add Receipt</h2>
                 </div>
             </Card>
             <CardContent className="space-y-4 px-6 py-8">
                 <div>
                     <FormControl sx={{ width: '100%'}}>
-                        <InputLabel size="normal" focused>Property</InputLabel>
+                        <InputLabel size="normal" focused>Tenant Name</InputLabel>
                         <Select
-                            labelId="property"
-                            id="property"
-                            value={property}
-                            label="Property"
-                            onChange={handlePropertyChange}
+                            labelId="tenant-name"
+                            id="tenant-name"
+                            value={tenantName}
+                            label="Tenant Name"
+                            onChange={handleTenantName}
                         >
-                        <MenuItem value='Property1'>Property1</MenuItem>
-                        <MenuItem value='Property2'>Property2</MenuItem>
-                        <MenuItem value='Property3'>Property3</MenuItem>
+                            <MenuItem value='Tenant1'>Tenant1</MenuItem>
+                            <MenuItem value='Tenant2'>Tenant2</MenuItem>
+                            <MenuItem value='Tenant3'>Tenant3</MenuItem>
                         </Select>
                     </FormControl>
                 </div>
@@ -122,11 +122,11 @@ function AddExpenses() {
                 <Button startIcon={<AddIcon />} color="primary" variant="contained">Add</Button>
                 <Button startIcon={<CloseIcon />} color="error" variant="contained" onClick={() => toggleModal(false)}>Close</Button>
             </CardActions>
-        </AddExpense>
+        </AddReceipt>
     )
 }
 
-export default AddExpenses;
+export default AddReceipts;
 
-const AddExpense = styled.div`
+const AddReceipt = styled.div`
 `;

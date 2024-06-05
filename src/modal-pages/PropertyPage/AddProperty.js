@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { useDispatch } from "react-redux";
 import { bindActionCreators } from "@reduxjs/toolkit";
-import { actionCreators } from "../app/state";
+import { actionCreators } from "../../app/state";
 
 // MUI Components
 import Card from '@mui/material/Card';

@@ -16,10 +16,10 @@ import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 
 // Modal Pages
-import AddProperty from '../modal-pages/AddProperty';
+import AddProperty from '../modal-pages/ReceiptPage/AddReceipt';
 import TenantDetails from "../modal-pages/TenantsPage/Details/TenantDetails";
-import AddExpense from "../modal-pages/AddExpense";
-import AddReceipt from "../modal-pages/AddReceipt";
+import AddExpense from "../modal-pages/ExpensesPage/AddExpense";
+import AddReceipt from "../modal-pages/ReceiptPage/AddReceipt";
 import AddTenant from "../modal-pages/TenantsPage/AddTenant";
 
 const style = {
