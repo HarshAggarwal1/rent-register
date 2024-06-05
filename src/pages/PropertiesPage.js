@@ -1,6 +1,8 @@
 import React from "react";
 import Styled from "styled-components";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { bindActionCreators } from "@reduxjs/toolkit";
+import { actionCreators } from "../app/state";
 import PropTypes from 'prop-types';
 
 // MUI Icons
@@ -353,12 +355,23 @@ function PropertiesPage() {
         [order, orderBy, page, rowsPerPage],
     );
 
+    // Modal state
+    const dispatch = useDispatch();
+    const { toggleDetailsMenu } = bindActionCreators(actionCreators, dispatch);
+
     return (
         <Properties className=" flex flex-col items-end gap-4" menu={menu}>
-            <Button className="" startIcon={<AddIcon />} variant="outlined">Add Property</Button>
+            <Button 
+                className="" 
+                startIcon={<AddIcon />} 
+                variant="outlined"
+                onClick={() => toggleDetailsMenu(true)}
+            >
+                Add Property
+            </Button>
             <Paper sx={{ width: '100%', overflow: 'hidden' }}>
                 <EnhancedTableToolbar numSelected={selected.length} />
-                <TableContainer sx={{ maxHeight: 440 }}>
+                <TableContainer sx={{ maxHeight: 360 }}>
                     <Table sx={{ minWidth: 800 }} aria-label="Receipts Table" stickyHeader>
                         <EnhancedTableHead
                             numSelected={selected.length}

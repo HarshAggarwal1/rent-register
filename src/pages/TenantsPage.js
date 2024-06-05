@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { bindActionCreators } from "@reduxjs/toolkit";
+import { actionCreators } from "../app/state";
 import Box from "../components/Box";
 
 // MUI Components
@@ -41,12 +43,21 @@ const tenant = [{
 
 function TenantsPage() {
     const { menu } = useSelector((state) => state.menu);
+    const dispatch = useDispatch();
+    const { toggleDetailsMenu } = bindActionCreators(actionCreators, dispatch);
     return (
         <TenantPage
             className=" flex flex-col items-end gap-4" 
             menu={menu}
         >
-            <Button className="" startIcon={<AddIcon />} variant="outlined">Add New Tenant</Button>
+            <Button 
+                className="" 
+                startIcon={<AddIcon />} 
+                variant="outlined"
+                onClick={() => toggleDetailsMenu(true)}
+            >
+                Add New Tenant
+            </Button>
             <Tenants 
                 className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full"
                 menu={menu}
