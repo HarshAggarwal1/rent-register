@@ -33,7 +33,7 @@ function Dashboard() {
     const dispatch = useDispatch();
     const { tab } = useSelector((state) => state.tab);
     const { menu } = useSelector((state) => state.menu);
-    const { changeMenu } = bindActionCreators(actionCreators, dispatch);
+    const { changeMenu, toggleMenu } = bindActionCreators(actionCreators, dispatch);
     return (
         <div className="min-h-screen">
             <Menu 
@@ -55,25 +55,45 @@ function Dashboard() {
                     </Button> */}
                     <Button 
                         startIcon={<Person3OutlinedIcon />}
-                        onClick={() => changeMenu("tenants")}
+                        onClick={() => {
+                            changeMenu("tenants");
+                            if (window.innerWidth <= 1024) {
+                                toggleMenu();
+                            }
+                        }}
                     >
                         Tenants
                     </Button>
                     <Button 
                         startIcon={<MapsHomeWorkOutlinedIcon />}
-                        onClick={() => changeMenu("properties")}
+                        onClick={() => {
+                            changeMenu("properties");
+                            if (window.innerWidth <= 1024) {
+                                toggleMenu();
+                            }
+                        }}
                     >
                         Properties
                     </Button>
                     <Button 
                         startIcon={<ReceiptLongOutlinedIcon />}
-                        onClick={() => changeMenu("receipts")}
+                        onClick={() => {
+                            changeMenu("receipts");
+                            if (window.innerWidth <= 1024) {
+                                toggleMenu();
+                            }
+                        }}
                     >
                         Receipts
                     </Button>
                     <Button 
                         startIcon={<CurrencyRupeeOutlinedIcon />}
-                        onClick={() => changeMenu("expenses")}
+                        onClick={() => {
+                            changeMenu("expenses");
+                            if (window.innerWidth <= 1024) {
+                                toggleMenu();
+                            }
+                        }}
                     >
                         Expenses
                     </Button>
