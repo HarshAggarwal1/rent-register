@@ -20,7 +20,7 @@ import '@fontsource/roboto/700.css';
 
 function Box(props) {
     const dispatch = useDispatch();
-    const { toggleDetailsMenu } = bindActionCreators(actionCreators, dispatch);
+    const { toggleModal } = bindActionCreators(actionCreators, dispatch);
     return (
         <Card className=" pt-4 pb-4 ps-4 pe-4">
             <CardHeader
@@ -43,7 +43,7 @@ function Box(props) {
             </CardContent>
             <CardActions>
                 <Stack sx={{ mt: 0.5 }} direction="row" spacing={2}>
-                    <Button size="small" variant="outlined" onClick={() => toggleDetailsMenu(true)}>Details</Button>
+                    <Button size="small" variant="outlined" onClick={() => toggleModal(true)}>Details</Button>
                 </Stack>
             </CardActions>
         </Card>

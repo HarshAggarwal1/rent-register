@@ -17,12 +17,12 @@ export const changeMenu = (menuValue) => {
     }
 }
 
-export const toggleDetailsMenu = (toggleDetailsMenu) => {
+export const toggleModal = (modal) => {
     return (dispatch) => {
         dispatch({
-            type: 'TOGGLE_DETAILS_MENU',
+            type: 'TOGGLE_MODAL',
             payload: {
-                toggleDetailsMenu
+                modal
             }
         });
     }

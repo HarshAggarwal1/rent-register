@@ -24,22 +24,20 @@ const style = {
     width: '90%',
     height: '90%',
     bgcolor: 'background.paper',
-    border: '1px solid #000',
     borderRadius: '10px',
-    boxShadow: 24,
-    p: 4,
+    boxShadow: 24
 };
 
 function ModalPage() {
     const dispatch = useDispatch();
-    const { toggleDetailsMenu } = bindActionCreators(actionCreators, dispatch);
-    const { detailsMenu } = useSelector((state) => state.detailsMenu);
-    const handleClose = () => toggleDetailsMenu(false);
+    const { toggleModal } = bindActionCreators(actionCreators, dispatch);
+    const { modal } = useSelector((state) => state.modal);
+    const handleClose = () => toggleModal(false);
     return (
         <Modal
             aria-labelledby="transition-modal-title"
             aria-describedby="transition-modal-description"
-            open={detailsMenu.toggleDetailsMenu}
+            open={modal.modal}
             onClose={handleClose}
             closeAfterTransition
             slots={{ backdrop: Backdrop }}
@@ -51,7 +49,7 @@ function ModalPage() {
             keepMounted
             disableEnforceFocus
         >
-            <Fade in={detailsMenu.toggleDetailsMenu}>
+            <Fade in={modal.modal}>
             <Box sx={style}>
                 <Typography id="transition-modal-title" variant="h6" component="h2">
                 Text in a modal

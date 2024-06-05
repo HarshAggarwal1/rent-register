@@ -44,7 +44,7 @@ const tenant = [{
 function TenantsPage() {
     const { menu } = useSelector((state) => state.menu);
     const dispatch = useDispatch();
-    const { toggleDetailsMenu } = bindActionCreators(actionCreators, dispatch);
+    const { toggleModal } = bindActionCreators(actionCreators, dispatch);
     return (
         <TenantPage
             className=" flex flex-col items-end gap-4" 
@@ -54,7 +54,7 @@ function TenantsPage() {
                 className="" 
                 startIcon={<AddIcon />} 
                 variant="outlined"
-                onClick={() => toggleDetailsMenu(true)}
+                onClick={() => toggleModal(true)}
             >
                 Add New Tenant
             </Button>

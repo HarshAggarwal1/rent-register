@@ -357,7 +357,7 @@ function ExpensesPage() {
 
     // Modal state
     const dispatch = useDispatch();
-    const { toggleDetailsMenu } = bindActionCreators(actionCreators, dispatch);
+    const { toggleModal } = bindActionCreators(actionCreators, dispatch);
 
     return (
         <Expenses className=" flex flex-col items-end gap-4" menu={menu}>
@@ -365,7 +365,7 @@ function ExpensesPage() {
                 className="" 
                 startIcon={<AddIcon />} 
                 variant="outlined"
-                onClick={() => toggleDetailsMenu(true)}
+                onClick={() => toggleModal(true)}
             >
                 New Expense
             </Button>

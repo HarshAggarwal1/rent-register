@@ -1,13 +1,13 @@
 let initialState = {
-    detailsMenu: false
+    modal: false
 };
 
 const reducer = (state = initialState, action) => {
     switch (action.type) {
-        case 'TOGGLE_DETAILS_MENU':
+        case 'TOGGLE_MODAL':
             return {
                 ...state,
-                detailsMenu: action.payload
+                modal: action.payload
             };
         default:
             return state;
