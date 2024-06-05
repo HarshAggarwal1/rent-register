@@ -37,6 +37,7 @@ import FirstPageIcon from '@mui/icons-material/FirstPage';
 import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import LastPageIcon from '@mui/icons-material/LastPage';
+import EditIcon from '@mui/icons-material/Edit';
 
 // Table Pagination Actions
 function TablePaginationActions(props) {
@@ -274,7 +275,14 @@ function EnhancedTableToolbar(props) {
                     Receipts
                 </Typography>
             )}
-
+            {numSelected == 1 ? (
+                    <Tooltip title="Modify">
+                        <IconButton>
+                            <EditIcon onClick={() => {alert("Clicked from receipts page");}}/>
+                        </IconButton>
+                    </Tooltip>
+                ) : (<div></div>)
+            }
             {numSelected > 0 ? (
                 <Tooltip title="Delete">
                     <IconButton>

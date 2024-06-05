@@ -21,14 +21,14 @@ import TenantDetails from "../modal-pages/TenantsPage/Details/TenantDetails";
 import AddExpense from "../modal-pages/AddExpense";
 import AddReceipt from "../modal-pages/AddReceipt";
 import AddTenant from "../modal-pages/TenantsPage/AddTenant";
-import { Height } from "@mui/icons-material";
 
 const style = {
     position: 'absolute',
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    width: '90%',
+    width: '60%',
+    maxWidth: '90%',
     maxHeight: '90%',
     bgcolor: 'background.paper',
     borderRadius: '0.5rem',
