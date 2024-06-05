@@ -375,7 +375,7 @@ function ExpensesPage() {
                 className="" 
                 startIcon={<AddIcon />} 
                 variant="outlined"
-                onClick={() => toggleModal(true, tab.menuValue, "add_expense")}
+                onClick={() => toggleModal(true, tab.menuValue, "add_expense", "add")}
             >
                 New Expense
             </Button>

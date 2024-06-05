@@ -55,7 +55,7 @@ function TenantsPage() {
                 className="" 
                 startIcon={<AddIcon />} 
                 variant="outlined"
-                onClick={() => toggleModal(true, tab.menuValue, "add_tenant")}
+                onClick={() => toggleModal(true, tab.menuValue, "add_tenant", "add")}
             >
                 Add New Tenant
             </Button>

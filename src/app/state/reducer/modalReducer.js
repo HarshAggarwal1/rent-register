@@ -2,7 +2,8 @@
 let initialState = {
     modal: false,
     tab: "",
-    page: ""
+    page: "",
+    mode: ""
 };
 
 const reducer = (state = initialState, action) => {
@@ -12,7 +13,8 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 modal: action.payload,
                 tab: action.payload,
-                page: action.payload
+                page: action.payload,
+                mode: action.payload
             };
         default:
             return state;

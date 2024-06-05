@@ -373,7 +373,7 @@ function PropertiesPage() {
                 className="" 
                 startIcon={<AddIcon />} 
                 variant="outlined"
-                onClick={() => toggleModal(true, tab.menuValue, "add_property")}
+                onClick={() => toggleModal(true, tab.menuValue, "add_property", "add")}
             >
                 Add Property
             </Button>

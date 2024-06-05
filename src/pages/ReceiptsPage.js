@@ -374,7 +374,7 @@ function ReceiptsPage() {
                 className="" 
                 startIcon={<AddIcon />} 
                 variant="outlined"
-                onClick={() => toggleModal(true, tab.menuValue, "add_receipt")}
+                onClick={() => toggleModal(true, tab.menuValue, "add_receipt", "add")}
             >
                 New Receipt
             </Button>
