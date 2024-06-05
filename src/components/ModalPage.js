@@ -16,6 +16,13 @@ import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 
+// Modal Pages
+import AddProperty from '../modal-pages/AddProperty';
+import TenantDetails from "../modal-pages/TenantsPage/TenantDetails";
+import AddExpense from "../modal-pages/AddExpense";
+import AddReceipt from "../modal-pages/AddReceipt";
+import AddTenant from "../modal-pages/TenantsPage/AddTenant";
+
 const style = {
     position: 'absolute',
     top: '50%',
@@ -51,13 +58,9 @@ function ModalPage() {
         >
             <Fade in={modal.modal}>
             <Box sx={style}>
-                <Typography id="transition-modal-title" variant="h6" component="h2">
-                Text in a modal
-                </Typography>
-                <Typography id="transition-modal-description" sx={{ mt: 2 }}>
-                Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-                </Typography>
-                
+
+                {renderPage(modal)}
+
             </Box>
             </Fade>
         </Modal>
@@ -65,3 +68,31 @@ function ModalPage() {
 }
 
 export default ModalPage;
+
+function renderPage(modal) {
+    if (modal.modal) {
+        if (modal.tab === "tenants") {
+            if (modal.page === "add_tenant") {
+                return <AddTenant />
+            }
+            else if (modal.page === "tenant_details") {
+                return <TenantDetails />
+            }
+        }
+        else if (modal.tab === "properties") {
+            if (modal.page === "add_property") {
+                return <AddProperty />
+            }
+        }
+        else if (modal.tab === "expenses") {
+            if (modal.page === "add_expense") {
+                return <AddExpense />
+            }
+        }
+        else if (modal.tab === "receipts") {
+            if (modal.page === "add_receipt") {
+                return <AddReceipt />
+            }
+        }
+    }
+}

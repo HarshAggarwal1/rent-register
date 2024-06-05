@@ -44,7 +44,7 @@ function Box(props) {
             </CardContent>
             <CardActions>
                 <Stack sx={{ mt: 0.5 }} direction="row" spacing={2}>
-                    <Button size="small" variant="outlined" onClick={() => toggleModal(true, tab.menuValue, "details")}>Details</Button>
+                    <Button size="small" variant="outlined" onClick={() => toggleModal(true, tab.menuValue, "tenant_details")}>Details</Button>
                 </Stack>
             </CardActions>
         </Card>

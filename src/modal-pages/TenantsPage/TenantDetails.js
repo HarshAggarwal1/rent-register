@@ -3,13 +3,13 @@ import styled from "styled-components";
 
 function TenantDetails() {
     return (
-        <TenantDetails>
+        <TenantDetail>
             <h1>Tenant Details</h1>
-        </TenantDetails>
+        </TenantDetail>
     )
 }
 
 export default TenantDetails;
 
-const TenantDetails = styled.div`
+const TenantDetail = styled.div`
 `;
