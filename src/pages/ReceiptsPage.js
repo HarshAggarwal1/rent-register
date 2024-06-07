@@ -275,10 +275,13 @@ function EnhancedTableToolbar(props) {
                     Receipts
                 </Typography>
             )}
-            {numSelected == 1 ? (
+            {numSelected === 1 ? (
                     <Tooltip title="Modify">
                         <IconButton>
-                            <EditIcon onClick={() => {alert("Clicked from receipts page");}}/>
+                            <EditIcon onClick={() => {
+                                alert("Clicked from receipts page");
+                            }}
+                            />
                         </IconButton>
                     </Tooltip>
                 ) : (<div></div>)

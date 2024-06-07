@@ -275,7 +275,7 @@ function EnhancedTableToolbar(props) {
                     Properties
                 </Typography>
             )}
-            {numSelected == 1 ? (
+            {numSelected === 1 ? (
                     <Tooltip title="Modify">
                         <IconButton>
                             <EditIcon onClick={() => {alert("Clicked from properties page");}}/>

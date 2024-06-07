@@ -17,7 +17,7 @@ export const changeMenu = (menuValue) => {
     }
 }
 
-export const toggleModal = (modal=false, tab="tenants", page="", mode="") => {
+export const toggleModal = (modal=false, tab="tenants", page="", mode="", ids=[]) => {
     return (dispatch) => {
         dispatch({
             type: 'TOGGLE_MODAL',
@@ -25,7 +25,8 @@ export const toggleModal = (modal=false, tab="tenants", page="", mode="") => {
                 modal,
                 tab,
                 page,
-                mode
+                mode,
+                ids
             }
         });
     }

@@ -3,7 +3,8 @@ let initialState = {
     modal: false,
     tab: "",
     page: "",
-    mode: ""
+    mode: "",
+    ids: []
 };
 
 const reducer = (state = initialState, action) => {
@@ -14,7 +15,8 @@ const reducer = (state = initialState, action) => {
                 modal: action.payload,
                 tab: action.payload,
                 page: action.payload,
-                mode: action.payload
+                mode: action.payload,
+                ids: action.payload
             };
         default:
             return state;
